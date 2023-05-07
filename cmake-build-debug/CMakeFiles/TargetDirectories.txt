@@ -1,3 +1,0 @@
-C:/Users/zhangyang/CLionProjects/test/cmake-build-debug/CMakeFiles/dig_some.dir
-C:/Users/zhangyang/CLionProjects/test/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/zhangyang/CLionProjects/test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
