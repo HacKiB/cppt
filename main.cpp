@@ -1,24 +1,10 @@
 
-#import "iostream"
 #import "optional"
 #import "windows.h"
 #import "tlhelp32.h"
-#import "c23.hpp"
+#import "feature_test.h"
+#import "utils.h"
 
-
-using namespace std;
-#define loop for(;;)
-
-template <typename A>
-void print(const A x){
-    cout << x << endl;
-}
-
-template<typename A,typename ...B>
-void print(A x1,B... x2_xn){
-    cout << x1 << " " ;
-    print(x2_xn...);
-}
 
 /*
  * other method? must prog with window?
@@ -75,11 +61,9 @@ optional<int> find_memory(DWORD pid,void *handle){
     return nullopt;
 }
 
+
 int main() {
-    print(1);
-    c23 A;
-    A.go();
-    print(A.p);
+
     auto res = wait_process("diged");
     if(!res.has_value()) return -1;
     DWORD pid = res.value();

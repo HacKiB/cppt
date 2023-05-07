@@ -1,18 +1,17 @@
 //
-// Created by Admin on 2023/3/16.
+// Created by zhangyang on 5/7/2023.
 //
 
-#ifndef DIG_SOME_C23_HPP
-#define DIG_SOME_C23_HPP
+#ifndef DIG_SOME_FEATURE_TEST_H
+#define DIG_SOME_FEATURE_TEST_H
 
 #import "tuple"
 #import "iostream"
 #import "exception"
+#import "utils.h"
 
-using namespace std;
 
-
-class c23{
+class feature_test{
 public:
     int p{12222};
     void go(){
@@ -34,5 +33,11 @@ public:
     }
 };
 
-#endif //DIG_SOME_C23_HPP
+void my_main(){
+    print(1);
+    feature_test A;
+    A.go();
+    print(A.p);
+}
 
+#endif //DIG_SOME_FEATURE_TEST_H
