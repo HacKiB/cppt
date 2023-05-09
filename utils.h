@@ -10,6 +10,7 @@ using namespace std;
 
 #define loop for(;;)
 
+
 template <typename A>
 void print(const A x){
     std::cout << x << std::endl;
