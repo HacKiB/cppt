@@ -5,7 +5,6 @@
 #import "feature_test.h"
 #import "utils.h"
 
-
 /*
  * other method? must prog with window?
  * HWND handle = FindWindowA(nullptr,"explorer.exe");
@@ -15,7 +14,6 @@
 optional<DWORD> find_process_contain(const string &target){
     PROCESSENTRY32 processEntry; processEntry.dwSize = sizeof(PROCESSENTRY32);
     HANDLE hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-
     bool first_for = true;BOOL bRet;
     loop{
         if(first_for) {bRet = Process32First(hProcessSnap, &processEntry);first_for= false;}
@@ -29,12 +27,12 @@ optional<DWORD> find_process_contain(const string &target){
 }
 
 optional<DWORD> wait_process(const string & target){
+    print("wait_process");
     loop{
+        print("wait:",target );
         auto res = find_process_contain(target);
         if(res.has_value()) return res;
-        print("wait:",target );
-        print("love u");
-        print(typeid( decltype(res) ).name()  );
+        print(typeid( decltype(res) ).name()  );   // canc
         Sleep(1000);
     }
     return nullopt;
@@ -64,7 +62,7 @@ optional<int> find_memory(DWORD pid,void *handle){
 
 int main() {
 
-    auto res = wait_process("diged");
+    auto res = wait_process("notepad");
     if(!res.has_value()) return -1;
     DWORD pid = res.value();
     print(pid);
